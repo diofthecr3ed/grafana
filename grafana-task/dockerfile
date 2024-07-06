@@ -1,0 +1,11 @@
+# Dockerfile
+FROM python:3.9
+
+COPY ./scripts/requirements.txt /scripts/requirements.txt
+RUN pip install --no-cache-dir -r /scripts/requirements.txt
+
+COPY ./scripts /scripts
+
+COPY ./scripts/data_generator2.py /scripts/data_generator2.py
+
+CMD ["python", "/scripts/data_generator2.py"]

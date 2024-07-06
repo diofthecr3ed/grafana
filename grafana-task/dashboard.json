@@ -1,0 +1,277 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "panels": [],
+      "repeat": "node",
+      "repeatDirection": "h",
+      "title": "${node}",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "ddqfgbv4sfwu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 10,
+        "x": 0,
+        "y": 1
+      },
+      "id": 3,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "ddqfgbv4sfwu8b"
+          },
+          "query": "from(bucket: \"iot_data\")\r\n  |> range(start: -1h)\r\n  |> filter(fn: (r) => r._measurement == \"iot_metrics\")\r\n  |> filter(fn: (r) => contains(value: r._field, set: ${field:json}) and r._field != \"people_count\")\r\n  |> filter(fn: (r) => r.device == \"${node}\")\r\n",
+          "refId": "A"
+        }
+      ],
+      "title": "Live Data",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "ddqfgbv4sfwu8b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 50
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 7,
+        "x": 10,
+        "y": 1
+      },
+      "id": 11,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": true
+        },
+        "frameIndex": 0,
+        "showHeader": true
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "ddqfgbv4sfwu8b"
+          },
+          "query": "from(bucket: \"iot_data\")\r\n  |> range(start: -1h)\r\n  |> filter(fn: (r) => r._measurement == \"iot_metrics\")\r\n  |> filter(fn: (r) => contains(value: r._field, set: ${field:json}))\r\n  |> filter(fn: (r) => r.device == \"${node}\")\r\n",
+          "refId": "A"
+        }
+      ],
+      "title": "Raw Data",
+      "type": "table"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": "",
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "influxdb",
+          "uid": "ddqfgbv4sfwu8b"
+        },
+        "definition": "import \"influxdata/influxdb/v1\"\r\n\r\nv1.tagValues(\r\n    bucket: \"iot_data\",\r\n    tag: \"device\"\r\n)\r\n",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Node Number",
+        "multi": true,
+        "name": "node",
+        "options": [],
+        "query": {
+          "query": "import \"influxdata/influxdb/v1\"\r\n\r\nv1.tagValues(\r\n    bucket: \"iot_data\",\r\n    tag: \"device\"\r\n)\r\n"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 3,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "influxdb",
+          "uid": "ddqfgbv4sfwu8b"
+        },
+        "definition": "import \"influxdata/influxdb/v1\"\r\n\r\nv1.fieldKeys(bucket: \"iot_data\")\r\n\r\n",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Table Metric Type",
+        "multi": true,
+        "name": "field",
+        "options": [],
+        "query": {
+          "query": "import \"influxdata/influxdb/v1\"\r\n\r\nv1.fieldKeys(bucket: \"iot_data\")\r\n\r\n"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Nodes Index",
+  "uid": "ddqj959mhsqv4a",
+  "version": 33,
+  "weekStart": ""
+}
