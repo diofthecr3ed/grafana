@@ -9,7 +9,6 @@ import os
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 # InfluxDB connection details from environment variables
 url = os.getenv("INFLUXDB_URL", "http://influxdb:8086")
 token = os.getenv("INFLUXDB_TOKEN", "XdDgvjQXTymljILun5Ellh3iAmCUv2KStpBK4qSpnS13Sw0LIAw-3UBPcFpB9x7HOfxoXvY1ZEEVtJrDHpd-bw==")
@@ -60,7 +59,7 @@ def generate_data():
     
             # Write the point to InfluxDB
             write_api.write(bucket=bucket, org=org, record=point)
-            logger.info(f"Data written: device={device['name']}, temperature={temperature}, humidity={humidity}, pressure={pressure}, people_count={people_count if people_count != last_people_counts[device['name']] else 'unchanged'}")
+            logger.info(f"Data written: device={device['name']}, temperature={temperature}, humidity={humidity}, pressure={pressure}")
         
         time.sleep(5)
 

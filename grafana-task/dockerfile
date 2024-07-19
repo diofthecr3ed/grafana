@@ -6,6 +6,6 @@ RUN pip install --no-cache-dir -r /scripts/requirements.txt
 
 COPY ./scripts /scripts
 
-COPY ./scripts/data_generator2.py /scripts/data_generator2.py
+COPY ./scripts/data_generator2.py /scripts/data_generator1.py
 
-CMD ["python", "/scripts/data_generator2.py"]
+CMD ["python", "/scripts/data_generator1.py"]

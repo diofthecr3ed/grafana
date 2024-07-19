@@ -1,0 +1,493 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 4,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "grafana-testdata-datasource",
+          "uid": "edqx091oj79q8f"
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "alt_field": "",
+          "baseUrl": "https://media.istockphoto.com",
+          "fallback": "https://media.istockphoto.com/id/1336889543/video/video-surveillance-on-the-motorway-license-plate-reading-camera.jpg?s=640x640&k=20&c=_cwc83PmbvR67RKS5atCMvP9rl43xdhukB3eZBbbylg=",
+          "height": "300",
+          "icon_field": "",
+          "open_url": {
+            "base_url": "",
+            "enable": false,
+            "metric_field": "",
+            "open_in_tab": true,
+            "suffix": ""
+          },
+          "overlay": {
+            "bindings": {
+              "bindings": [],
+              "has_text": true,
+              "unbounded": "#66666620"
+            },
+            "field": "",
+            "height": {
+              "size": 5,
+              "unit": "%"
+            },
+            "position": "Top right",
+            "width": {
+              "size": 5,
+              "unit": "%"
+            }
+          },
+          "shared_cross_hair": {
+            "backgroundColor": "#FFFFFF10",
+            "borderColor": "#FFFFFF20"
+          },
+          "singleFill": true,
+          "slideshow": {
+            "duration": 5000,
+            "enable": true,
+            "infinite": true,
+            "pauseOnHover": true,
+            "transition": "Slide",
+            "transition_duration": 300
+          },
+          "suffix": "/id/1336889543/video/video-surveillance-on-the-motorway-license-plate-reading-camera.jpg?s=640x640&k=20&c=_cwc83PmbvR67RKS5atCMvP9rl43xdhukB3eZBbbylg=",
+          "tooltip": false,
+          "tooltip_date_elapsed": false,
+          "tooltip_field": "",
+          "tooltip_include_date": false,
+          "tooltip_include_field": true,
+          "underline": {
+            "bindings": {
+              "bindings": [],
+              "has_text": true,
+              "unbounded": "#CCCCDCFF"
+            },
+            "bindings_field": "",
+            "field": "",
+            "text_align": "left",
+            "text_size": "14"
+          },
+          "width": "500"
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-testdata-datasource",
+              "uid": "edqx091oj79q8f"
+            },
+            "refId": "A",
+            "scenarioId": "random_walk",
+            "seriesCount": 1
+          }
+        ],
+        "title": "Snapshots",
+        "type": "dalvany-image-panel"
+      },
+      {
+        "datasource": {
+          "type": "grafana-testdata-datasource",
+          "uid": "edqx091oj79q8f"
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 6,
+          "x": 6,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "autoPlay": true,
+          "customBackground": false,
+          "geolocate": false,
+          "iframeURL": "https://www.cameraftp.com/Camera/CameraPlayer.aspx/parentID75626514/shareID12935277/isEmbeddedtrue/upperdeck",
+          "loop": true,
+          "videoId": "eQpyJQ2womo",
+          "videoType": "iframe"
+        },
+        "title": "Livestream",
+        "type": "innius-video-panel"
+      },
+      {
+        "datasource": {
+          "type": "grafana-testdata-datasource",
+          "uid": "edqx091oj79q8f"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "scaleDistribution": {
+                "type": "linear"
+              }
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 8,
+          "x": 12,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "calculate": true,
+          "calculation": {
+            "xBuckets": {
+              "mode": "count",
+              "value": "53"
+            },
+            "yBuckets": {
+              "scale": {
+                "type": "linear"
+              },
+              "value": "7"
+            }
+          },
+          "cellGap": 1,
+          "color": {
+            "exponent": 0.5,
+            "fill": "dark-orange",
+            "mode": "scheme",
+            "reverse": false,
+            "scale": "exponential",
+            "scheme": "Oranges",
+            "steps": 64
+          },
+          "exemplars": {
+            "color": "rgba(255,0,255,0.7)"
+          },
+          "filterValues": {
+            "le": 1e-9
+          },
+          "legend": {
+            "show": true
+          },
+          "rowsFrame": {
+            "layout": "auto"
+          },
+          "tooltip": {
+            "mode": "single",
+            "showColorScale": false,
+            "yHistogram": false
+          },
+          "yAxis": {
+            "axisPlacement": "left",
+            "max": "7",
+            "reverse": false,
+            "unit": "d"
+          }
+        },
+        "pluginVersion": "11.1.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-testdata-datasource",
+              "uid": "edqx091oj79q8f"
+            },
+            "max": 12.8,
+            "min": 1,
+            "noise": 1,
+            "refId": "A",
+            "scenarioId": "random_walk",
+            "seriesCount": 1,
+            "spread": 10,
+            "startValue": 1
+          }
+        ],
+        "title": "Weekly Traffic Heatmap ",
+        "type": "heatmap"
+      },
+      {
+        "datasource": {
+          "type": "grafana-testdata-datasource",
+          "uid": "edqx091oj79q8f"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 4,
+          "x": 20,
+          "y": 0
+        },
+        "id": 6,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.1.0",
+        "title": "Violations per Hour (Weekly)",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "grafana-testdata-datasource",
+          "uid": "edqx091oj79q8f"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 12,
+          "x": 0,
+          "y": 6
+        },
+        "id": 3,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true
+        },
+        "pluginVersion": "11.1.0",
+        "targets": [
+          {
+            "csvContent": "S.No.,Type of Vehicle,Number Plate,Violation Type\r\n1,Car,ABC1234,Speeding\r\n2,Truck,XYZ5678,Overweight\r\n3,Motorcycle,LMN9101,No Helmet\r\n4,Bus,JKL2345,Signal Violation\r\n5,Van,GHI3456,Parking Violation\r\n6,Car,DEF7890,Speeding\r\n7,Truck,UVW6789,Overweight\r\n8,Motorcycle,OPQ1122,No Helmet\r\n9,Bus,MNO3344,Signal Violation\r\n10,Van,STU5566,Parking Violation\r\n11,Car,WXY7788,Speeding\r\n12,Truck,ABC9900,Overweight\r\n13,Motorcycle,DEF1133,No Helmet\r\n14,Bus,JKL5566,Signal Violation\r\n15,Van,GHI7788,Parking Violation\r\n16,Car,XYZ9911,Speeding\r\n17,Truck,UVW2233,Overweight\r\n18,Motorcycle,OPQ3344,No Helmet\r\n19,Bus,MNO5566,Signal Violation\r\n20,Van,STU7788,Parking Violation\r\n",
+            "datasource": {
+              "type": "grafana-testdata-datasource",
+              "uid": "edqx091oj79q8f"
+            },
+            "refId": "A",
+            "scenarioId": "csv_content"
+          }
+        ],
+        "title": "Violation Records",
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "grafana-testdata-datasource",
+          "uid": "edqx091oj79q8f"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 12,
+          "y": 6
+        },
+        "id": 7,
+        "options": {
+          "displayMode": "gradient",
+          "maxVizHeight": 300,
+          "minVizHeight": 16,
+          "minVizWidth": 8,
+          "namePlacement": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": true
+          },
+          "showUnfilled": true,
+          "sizing": "auto",
+          "valueMode": "color"
+        },
+        "pluginVersion": "11.1.0",
+        "targets": [
+          {
+            "csvContent": "Metric,Value\r\nMonday,75\r\nTuesday,65\r\nWednesday,80\r\nThursday,55\r\nFriday,43\r\nSaturday,60\r\nSunday,70\r\n",
+            "datasource": {
+              "type": "grafana-testdata-datasource",
+              "uid": "edqx091oj79q8f"
+            },
+            "refId": "A",
+            "scenarioId": "csv_content"
+          }
+        ],
+        "title": "Violations by day (Weekly)",
+        "type": "bargauge"
+      },
+      {
+        "datasource": {
+          "type": "grafana-testdata-datasource",
+          "uid": "edqx091oj79q8f"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 4,
+          "x": 20,
+          "y": 6
+        },
+        "id": 5,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.1.0",
+        "title": "Violations per Hour (Daily)",
+        "type": "stat"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "2024-07-08T03:09:28.611Z",
+      "to": "2024-07-08T04:04:41.978Z"
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "Traffic Data",
+    "uid": "adr3s4wl9woaoc",
+    "version": 10,
+    "weekStart": ""
+  }
